@@ -166,9 +166,23 @@
       </div>
 
       <form id="quiz-form" class="quiz-form" novalidate>
+        <section class="candidate-card reveal" aria-labelledby="candidate-title">
+          <div>
+            <p class="eyebrow">Identification du candidat</p>
+            <h3 id="candidate-title">Avant de commencer</h3>
+            <p>Votre nom ou pseudonyme et votre résultat seront conservés et visibles uniquement par les administrateurs autorisés.</p>
+          </div>
+          <label class="candidate-field" for="candidate-name">
+            <span>Nom ou pseudonyme</span>
+            <input id="candidate-name" name="candidateName" type="text" minlength="2" maxlength="60" autocomplete="name" required placeholder="Ex. Kuchiki Rukia">
+          </label>
+        </section>
         <div id="quiz-questions"></div>
         <div class="quiz-submit reveal">
-          <p><span id="answered-count">0</span> / 12 réponses enregistrées</p>
+          <div>
+            <p><span id="answered-count">0</span> / 12 réponses enregistrées</p>
+            <p class="submit-status" id="submit-status" role="status"></p>
+          </div>
           <button class="button primary" type="submit">Valider mes réponses</button>
         </div>
       </form>
@@ -188,9 +202,11 @@
   <footer>
     <a class="brand footer-brand" href="#accueil"><span class="brand-mark">魂</span><span><strong>Académie Shinigami</strong><small>Cours communautaire non officiel</small></span></a>
     <p>Contenu inspiré de l'univers de Bleach, destiné au jeu de rôle.</p>
-    <a href="#accueil">Retour en haut ↑</a>
+    <div class="footer-links"><a href="admin.html">Espace administrateur</a><a href="#accueil">Retour en haut ↑</a></div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
