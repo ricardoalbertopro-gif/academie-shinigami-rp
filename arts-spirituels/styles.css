@@ -1,0 +1,31 @@
+.spirit-course {
+  --red: #7058ca;
+  --red-bright: #aa98ff;
+  --paper: #efedf5;
+  --paper-dark: #d9d5e6;
+}
+
+.spirit-course::before { background: linear-gradient(115deg, transparent 0 72%, rgba(112,88,202,.05) 72% 72.2%, transparent 72.2%); }
+.spirit-hero { background: radial-gradient(circle at 75% 50%, rgba(125,94,221,.24), transparent 30%), linear-gradient(120deg, #080712 0%, #15132b 100%); }
+.spirit-symbol .ring { box-shadow: inset 0 0 50px rgba(112,88,202,.08); }
+.spirit-symbol .kanji { text-shadow: 16px 16px 0 rgba(112,88,202,.18); }
+.spirit-ways::before { content: "鬼"; color: rgba(170,152,255,.025); }
+.spirit-path-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: rgba(255,255,255,.13); border: 1px solid rgba(255,255,255,.13); }
+.spirit-path { min-height: 300px; padding: clamp(30px, 5vw, 55px); background: #0d0c1b; display: grid; grid-template-columns: 90px 1fr; gap: 25px; position: relative; }
+.spirit-path > span { font: 70px/1 var(--serif); color: rgba(170,152,255,.38); }
+.spirit-path h3 { margin: 8px 0 13px; font: 34px/1 var(--serif); color: white; }
+.spirit-path p:last-child { color: #aaa7b6; font-size: 14px; }
+.spirit-rule { background: linear-gradient(110deg, #5742a8, #735ad0); }
+.spirit-course .quiz-section { background: #dfdce8; }
+.spirit-course .candidate-card { background: #0d0c1b; }
+.spirit-course .results { background: #0d0c1b; }
+
+@media (max-width: 760px) {
+  .spirit-path-grid { grid-template-columns: 1fr; }
+  .spirit-path { grid-template-columns: 60px 1fr; min-height: auto; }
+  .spirit-path > span { font-size: 48px; }
+}
+
+@media (max-width: 480px) {
+  .spirit-path { grid-template-columns: 1fr; }
+}

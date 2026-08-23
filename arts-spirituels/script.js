@@ -1,16 +1,16 @@
 const questions = [
-  { id: "hakuda-goal", text: "Quel est l'objectif principal du Hakuda ?", options: ["Frapper aussi fort que possible", "Contrôler le corps à corps et exploiter les ouvertures", "Remplacer définitivement le Zanpakutō", "Augmenter la pression spirituelle"] },
-  { id: "flexible-guard", text: "Pourquoi faut-il conserver une garde souple ?", options: ["Pour paraître moins menaçant", "Pour économiser son Reiatsu uniquement", "Pour réagir vite sans fatiguer inutilement les muscles", "Pour empêcher toute esquive"] },
-  { id: "short-range", text: "Quelle distance favorise les saisies, les coudes et les projections ?", options: ["La distance longue", "La distance moyenne", "La distance courte", "Toutes de manière identique"] },
-  { id: "deflection", text: "Face à une attaque de Zanjutsu très puissante, quelle réponse limite le choc direct ?", options: ["Crisper davantage sa prise", "Dévier la trajectoire de la lame", "Fermer les yeux et bloquer", "Avancer en ligne droite"] },
-  { id: "rhythm", text: "Pourquoi varier le rythme de ses attaques ?", options: ["Pour rendre les gestes plus spectaculaires", "Pour empêcher l'adversaire d'anticiper", "Pour allonger volontairement le combat", "Pour ne plus avoir besoin de garde"] },
-  { id: "observe-body", text: "Que doit principalement observer un pratiquant de Zanjutsu ?", options: ["Uniquement la pointe de la lame", "Uniquement les yeux", "L'ensemble du corps et le mouvement adverse", "Le décor derrière lui"] },
-  { id: "feint", text: "À quoi sert une feinte ?", options: ["À garantir que le prochain coup atteindra sa cible", "À provoquer une réaction et créer une ouverture", "À interrompre définitivement le combat", "À restaurer son énergie"] },
-  { id: "narrow-space", text: "Quel avantage peut offrir un espace étroit contre une arme très longue ?", options: ["Il augmente sa portée", "Il limite ses grands mouvements", "Il rend son porteur invisible", "Il neutralise automatiquement sa puissance"] },
-  { id: "observer-role", text: "Quel membre d'une équipe analyse les capacités ennemies et transmet les informations ?", options: ["Le finisseur", "L'avant-garde", "L'observateur", "Le contrôleur"] },
-  { id: "retreat", text: "Votre mission consiste seulement à recueillir des informations. L'ennemi est très supérieur. Que faire ?", options: ["Combattre jusqu'à l'épuisement", "Libérer immédiatement toutes ses capacités", "Transmettre les informations et battre en retraite", "Ignorer l'objectif initial"] },
-  { id: "combine", text: "Quelle combinaison unit correctement Hakuda et Zanjutsu ?", options: ["Jeter sa lame avant chaque combat", "Contrôler la distance au sabre, frapper au corps à corps dans la garde puis se replacer", "Utiliser les deux sans observer l'adversaire", "Rester immobile en alternant les attaques"] },
-  { id: "movement-economy", text: "Pourquoi un combattant doit-il éviter les gestes inutiles ?", options: ["Parce qu'ils réduisent la portée de sa lame", "Parce qu'ils consomment de l'énergie et révèlent ses intentions", "Parce qu'ils empêchent toute attaque à distance", "Parce qu'ils rendent sa garde systématiquement trop basse"] }
+  { id: "spiritual-foundation", text: "Quel est le fondement d'une technique spirituelle stable ?", options: ["Libérer toute son énergie immédiatement", "Contrôler précisément le flux de Reiryoku", "Réciter l'incantation le plus vite possible", "Maintenir une pression spirituelle maximale"] },
+  { id: "reiryoku-definition", text: "Que désigne le Reiryoku ?", options: ["La pression ressentie autour d'un combattant", "La structure extérieure d'une barrière", "La réserve d'énergie spirituelle contenue dans l'âme", "La trajectoire suivie par un sort"] },
+  { id: "reiatsu-definition", text: "Que représente le Reiatsu ?", options: ["Une formule réservée aux arts de soin", "La pression produite lorsque la puissance spirituelle se manifeste", "Une réserve indépendante du Reiryoku", "Le nom donné à toute incantation"] },
+  { id: "hado-purpose", text: "Quelle est la fonction principale du Hadō ?", options: ["Soigner une blessure", "Maintenir un scellement durable", "Produire un effet offensif ou destructeur", "Masquer toute présence spirituelle"] },
+  { id: "bakudo-purpose", text: "À quoi sert principalement le Bakudō ?", options: ["À augmenter définitivement le Reiryoku", "À contraindre, protéger ou soutenir", "À remplacer toutes les techniques offensives", "À soigner les blessures physiques"] },
+  { id: "kaido-purpose", text: "Quel est le principe du Kaidō ?", options: ["Accroître la pression exercée sur un adversaire", "Restaurer l'équilibre spirituel afin de soutenir la guérison", "Transformer une barrière en attaque", "Rompre immédiatement tout scellement"] },
+  { id: "barrier-stability", text: "De quoi dépend principalement la stabilité d'une barrière ?", options: ["De sa couleur et de sa forme extérieure", "Du nombre d'adversaires présents", "Du contrôle et de la puissance spirituelle de son utilisateur", "De la longueur du Zanpakutō"] },
+  { id: "full-incantation", text: "Quel avantage apporte une incantation complète ?", options: ["Elle rend le pratiquant impossible à interrompre", "Elle guide et renforce la structure du sort", "Elle supprime toute dépense d'énergie", "Elle garantit que la cible sera atteinte"] },
+  { id: "incantation-omission", text: "Quel compromis accompagne généralement l'abandon de l'incantation ?", options: ["Une portée supérieure mais une exécution plus lente", "Une guérison plus rapide sans dépense supplémentaire", "Une exécution plus rapide, mais une puissance réduite et davantage de contrôle requis", "Une technique plus puissante sans risque d'échec"] },
+  { id: "unstable-technique", text: "Que faire lorsqu'une technique devient instable ?", options: ["L'alimenter avec toute l'énergie restante", "Interrompre l'apport, dissiper le flux et reprendre le contrôle", "La diriger vers la cible la plus proche", "Accélérer l'incantation sans modifier le flux"] },
+  { id: "high-rank-discipline", text: "Que faut-il retenir des arts de rang élevé ?", options: ["Ils sont toujours préférables aux techniques simples", "Ils peuvent être utilisés sans entraînement si la réserve est suffisante", "Ils exigent davantage de maîtrise, de puissance et de stabilité", "Ils ne présentent aucun danger pour les alliés"] },
+  { id: "right-technique", text: "Quelle décision démontre la meilleure maîtrise du Kidō en mission ?", options: ["Employer systématiquement la technique la plus puissante", "Choisir la technique la plus simple qui accomplit l'objectif sans risque inutile", "Ignorer l'environnement pour conserver sa concentration", "Attendre l'épuisement complet avant de changer de voie"] }
 ];
 
 const config = window.APP_CONFIG || {};
@@ -48,7 +48,7 @@ function collectSubmission() {
     const selected = form.querySelector(`input[name="q${index}"]:checked`);
     return { questionId: question.id, optionIndex: selected ? Number(selected.value) : null };
   });
-  return { candidateName, answers };
+  return { courseId: "arts-spirituels", candidateName, answers };
 }
 
 form.addEventListener("change", updateAnsweredCount);

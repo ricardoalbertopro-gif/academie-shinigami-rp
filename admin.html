@@ -60,13 +60,14 @@
 
       <div class="filters">
         <label>Rechercher<input id="filter-name" type="search" placeholder="Nom du candidat"></label>
+        <label>Cours<select id="filter-course"><option value="all">Tous les cours</option><option value="combat">Combat</option><option value="arts-spirituels">Arts spirituels</option></select></label>
         <label>Résultat<select id="filter-result"><option value="all">Tous</option><option value="passed">Réussite</option><option value="failed">Échec</option></select></label>
         <label>Depuis<input id="filter-date" type="date"></label>
       </div>
 
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Candidat</th><th>Date</th><th>Score</th><th>Résultat</th><th>Détail</th></tr></thead>
+          <thead><tr><th>Candidat</th><th>Cours</th><th>Date</th><th>Score</th><th>Résultat</th><th>Détail</th></tr></thead>
           <tbody id="results-body"></tbody>
         </table>
         <p class="empty-state" id="empty-results" hidden>Aucun résultat ne correspond aux filtres.</p>

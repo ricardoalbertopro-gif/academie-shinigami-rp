@@ -1,13 +1,13 @@
-# Académie Shinigami — Cours RP
+# Académie Shinigami — Portail de formation
 
-Cours interactif sur le Hakuda, le Zanjutsu et les tactiques de combat. Les candidats saisissent un nom ou pseudonyme, passent l'évaluation et obtiennent une correction. Les résultats sont conservés dans Supabase et consultables uniquement par les administrateurs approuvés.
+Portail interactif regroupant les formations de l'Académie. Les cours de combat et d'arts spirituels possèdent chacun une évaluation de 12 questions. Les résultats sont conservés dans Supabase et consultables uniquement par les administrateurs approuvés.
 
 ## Architecture
 
-- GitHub Pages héberge `index.html` et `admin.html`.
+- GitHub Pages héberge le portail, `/combat/`, `/arts-spirituels/` et `admin.html`.
 - Supabase Auth gère les comptes administrateurs.
-- PostgreSQL stocke les profils et les tentatives avec Row Level Security.
-- Les Edge Functions calculent les scores et gèrent les rôles côté serveur.
+- PostgreSQL stocke les profils et les tentatives identifiées par cours avec Row Level Security.
+- Les Edge Functions sélectionnent la banque de correction, calculent les scores et gèrent les rôles côté serveur.
 
 ## Configuration Supabase
 

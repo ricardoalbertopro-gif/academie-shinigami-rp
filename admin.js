@@ -15,8 +15,16 @@ const questionLabels = {
   "hakuda-goal": "Objectif du Hakuda", "flexible-guard": "Garde souple", "short-range": "Distance courte",
   "deflection": "Déviation", "rhythm": "Rythme", "observe-body": "Observation du corps", "feint": "Feinte",
   "narrow-space": "Espace étroit", "observer-role": "Rôle de l'observateur", "retreat": "Retraite tactique",
-  "combine": "Hakuda et Zanjutsu", "movement-economy": "Économie des mouvements"
+  "combine": "Hakuda et Zanjutsu", "movement-economy": "Économie des mouvements", "rp-attempt": "Ancienne question de conduite",
+  "spiritual-foundation": "Fondement spirituel", "reiryoku-definition": "Définition du Reiryoku",
+  "reiatsu-definition": "Définition du Reiatsu", "hado-purpose": "Fonction du Hadō",
+  "bakudo-purpose": "Fonction du Bakudō", "kaido-purpose": "Principe du Kaidō",
+  "barrier-stability": "Stabilité d'une barrière", "full-incantation": "Incantation complète",
+  "incantation-omission": "Abandon de l'incantation", "unstable-technique": "Technique instable",
+  "high-rank-discipline": "Arts de rang élevé", "right-technique": "Choix de la technique"
 };
+
+const courseLabels = { combat: "Combat", "arts-spirituels": "Arts spirituels", militaire: "Militaire" };
 
 function showOnly(panel) {
   [authPanel, pendingPanel, dashboard].forEach(element => element.hidden = element !== panel);
@@ -94,17 +102,17 @@ document.querySelector("#pending-logout").addEventListener("click", signOut);
 document.querySelector("#refresh-button").addEventListener("click", loadAttempts);
 
 async function loadAttempts() {
-  const { data, error } = await client.from("exam_attempts").select("id,candidate_name,answers,correct_count,total,percent,passed,created_at").order("created_at", { ascending: false });
+  const { data, error } = await client.from("exam_attempts").select("id,course_id,candidate_name,answers,correct_count,total,percent,passed,created_at").order("created_at", { ascending: false });
   if (error) return alert(`Impossible de charger les résultats : ${error.message}`);
   attempts = data || [];
-  renderStats();
-  renderAttempts();
+  renderDashboard();
 }
 
 function renderStats() {
-  const total = attempts.length;
-  const passed = attempts.filter(attempt => attempt.passed).length;
-  const average = total ? Math.round(attempts.reduce((sum, attempt) => sum + attempt.percent, 0) / total) : 0;
+  const rows = filteredAttempts();
+  const total = rows.length;
+  const passed = rows.filter(attempt => attempt.passed).length;
+  const average = total ? Math.round(rows.reduce((sum, attempt) => sum + attempt.percent, 0) / total) : 0;
   document.querySelector("#stat-attempts").textContent = total;
   document.querySelector("#stat-average").textContent = `${average}%`;
   document.querySelector("#stat-passed").textContent = passed;
@@ -113,9 +121,11 @@ function renderStats() {
 
 function filteredAttempts() {
   const name = document.querySelector("#filter-name").value.trim().toLocaleLowerCase("fr");
+  const course = document.querySelector("#filter-course").value;
   const result = document.querySelector("#filter-result").value;
   const date = document.querySelector("#filter-date").value;
   return attempts.filter(attempt => (!name || attempt.candidate_name.toLocaleLowerCase("fr").includes(name))
+    && (course === "all" || attempt.course_id === course)
     && (result === "all" || (result === "passed") === attempt.passed)
     && (!date || attempt.created_at.slice(0, 10) >= date));
 }
@@ -124,20 +134,26 @@ function renderAttempts() {
   const rows = filteredAttempts();
   document.querySelector("#empty-results").hidden = rows.length > 0;
   document.querySelector("#results-body").innerHTML = rows.map(attempt => `<tr>
-    <td><strong>${escapeHtml(attempt.candidate_name)}</strong></td><td>${formatDate(attempt.created_at)}</td>
+    <td><strong>${escapeHtml(attempt.candidate_name)}</strong></td>
+    <td>${escapeHtml(courseLabels[attempt.course_id] || attempt.course_id)}</td><td>${formatDate(attempt.created_at)}</td>
     <td>${attempt.correct_count}/${attempt.total} · ${attempt.percent}%</td>
     <td><span class="result-badge ${attempt.passed ? "passed" : "failed"}">${attempt.passed ? "Réussite" : "Échec"}</span></td>
     <td><button class="text-button detail-button" type="button" data-id="${attempt.id}">Consulter</button></td></tr>`).join("");
   document.querySelectorAll(".detail-button").forEach(button => button.addEventListener("click", () => openAttempt(button.dataset.id)));
 }
 
-["filter-name", "filter-result", "filter-date"].forEach(id => document.querySelector(`#${id}`).addEventListener("input", renderAttempts));
+function renderDashboard() {
+  renderStats();
+  renderAttempts();
+}
+
+["filter-name", "filter-course", "filter-result", "filter-date"].forEach(id => document.querySelector(`#${id}`).addEventListener("input", renderDashboard));
 
 function openAttempt(id) {
   const attempt = attempts.find(item => item.id === id);
   if (!attempt) return;
   document.querySelector("#dialog-title").textContent = attempt.candidate_name;
-  document.querySelector("#dialog-meta").textContent = `${formatDate(attempt.created_at)} · ${attempt.correct_count}/${attempt.total} · ${attempt.percent}%`;
+  document.querySelector("#dialog-meta").textContent = `${courseLabels[attempt.course_id] || attempt.course_id} · ${formatDate(attempt.created_at)} · ${attempt.correct_count}/${attempt.total} · ${attempt.percent}%`;
   document.querySelector("#answer-details").innerHTML = attempt.answers.map(answer => `<li class="${answer.correct ? "answer-correct" : "answer-wrong"}"><strong>${escapeHtml(questionLabels[answer.questionId] || answer.questionId)}</strong><span>Réponse choisie : option ${answer.optionIndex + 1} · ${answer.correct ? "Correcte" : `Incorrecte (bonne option : ${answer.correctOptionIndex + 1})`}</span></li>`).join("");
   document.querySelector("#attempt-dialog").showModal();
 }
@@ -161,8 +177,8 @@ async function manageAdmin(action, userId) {
 }
 
 document.querySelector("#export-button").addEventListener("click", () => {
-  const header = ["Nom du candidat", "Date", "Bonnes réponses", "Total", "Pourcentage", "Résultat", "Réponses JSON"];
-  const lines = filteredAttempts().map(attempt => [attempt.candidate_name, attempt.created_at, attempt.correct_count, attempt.total, attempt.percent, attempt.passed ? "Réussite" : "Échec", JSON.stringify(attempt.answers)]);
+  const header = ["Nom du candidat", "Cours", "Date", "Bonnes réponses", "Total", "Pourcentage", "Résultat", "Réponses JSON"];
+  const lines = filteredAttempts().map(attempt => [attempt.candidate_name, courseLabels[attempt.course_id] || attempt.course_id, attempt.created_at, attempt.correct_count, attempt.total, attempt.percent, attempt.passed ? "Réussite" : "Échec", JSON.stringify(attempt.answers)]);
   const csv = "\uFEFF" + [header, ...lines].map(row => row.map(csvCell).join(";")).join("\r\n");
   const link = document.createElement("a");
   link.href = URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8" }));
