@@ -22,18 +22,18 @@ const combatQuestions = [
 ];
 
 const spiritualArtsQuestions = [
-  { id: "spiritual-foundation", answer: 1, explanation: "La stabilité repose d'abord sur un contrôle précis du Reiryoku, pas sur la quantité libérée." },
-  { id: "reiryoku-definition", answer: 2, explanation: "Le Reiryoku est l'énergie spirituelle contenue dans l'âme et disponible pour alimenter les techniques." },
-  { id: "reiatsu-definition", answer: 1, explanation: "Le Reiatsu est la pression produite lorsque la puissance spirituelle d'un être se manifeste." },
-  { id: "hado-purpose", answer: 2, explanation: "Le Hadō regroupe les arts offensifs destinés à frapper, repousser ou produire un effet destructeur." },
-  { id: "bakudo-purpose", answer: 1, explanation: "Le Bakudō sert à contraindre, protéger ou soutenir plutôt qu'à infliger directement des dégâts." },
-  { id: "kaido-purpose", answer: 1, explanation: "Le Kaidō restaure l'équilibre spirituel du patient afin de soutenir la récupération de son corps." },
-  { id: "barrier-stability", answer: 2, explanation: "Une barrière dépend de la puissance disponible, mais surtout de la capacité à lui donner une forme stable." },
-  { id: "full-incantation", answer: 1, explanation: "L'incantation complète guide la structure du sort et permet d'en déployer plus sûrement le potentiel." },
-  { id: "incantation-omission", answer: 2, explanation: "L'abandon de l'incantation accélère l'exécution, mais affaiblit généralement le sort et exige une maîtrise supérieure." },
-  { id: "unstable-technique", answer: 1, explanation: "Une technique instable doit être privée d'énergie puis dissipée avant qu'elle ne menace son utilisateur ou son entourage." },
-  { id: "high-rank-discipline", answer: 2, explanation: "Les arts de rang élevé imposent davantage de puissance, de précision et de stabilité." },
-  { id: "right-technique", answer: 1, explanation: "La maîtrise consiste à employer la technique suffisante pour réussir la mission sans dépense ni risque inutiles." }
+  { id: "spiritual-foundation", answer: 2, explanation: "Ajouter de la puissance à un flux instable aggrave sa déformation. Il faut réduire l'apport, rétablir une circulation régulière puis reformer la technique." },
+  { id: "reiryoku-definition", answer: 0, explanation: "Une grande réserve ne garantit pas une exécution correcte : la dispersion révèle ici un défaut de contrôle du Reiryoku." },
+  { id: "reiatsu-definition", answer: 3, explanation: "Le Reiatsu confirme qu'une puissance spirituelle se manifeste, mais ne permet pas de mesurer précisément la réserve restante ni d'identifier à lui seul la technique préparée." },
+  { id: "hado-purpose", answer: 1, explanation: "Lorsque l'objectif est un effet offensif immédiat et que l'axe est sûr, un Hadō précisément dosé répond directement au besoin." },
+  { id: "bakudo-purpose", answer: 2, explanation: "Le Bakudō permet de contraindre sans blesser et comprend aussi des fonctions défensives adaptées à la sécurisation du passage." },
+  { id: "kaido-purpose", answer: 0, explanation: "Le Kaidō demande d'évaluer le patient et de restaurer progressivement son équilibre spirituel, sans transfert aveugle ni précipitation." },
+  { id: "barrier-stability", answer: 3, explanation: "Une rupture localisée malgré une réserve suffisante indique un défaut de structure ou de répartition. La forme doit être corrigée avant d'augmenter la puissance." },
+  { id: "full-incantation", answer: 1, explanation: "Quand le temps et la protection sont disponibles, l'incantation complète offre la structure la plus stable et permet de développer pleinement l'effet." },
+  { id: "incantation-omission", answer: 0, explanation: "L'urgence et le besoin limité justifient ici une exécution abrégée, à condition d'accepter sa puissance réduite et d'en maîtriser le risque." },
+  { id: "unstable-technique", answer: 2, explanation: "Près des alliés, il faut cesser d'alimenter la technique puis dissiper son flux de manière contrôlée plutôt que tenter de la transformer ou de la projeter." },
+  { id: "high-rank-discipline", answer: 3, explanation: "Une technique simple, maîtrisée et suffisante est plus fiable qu'un art supérieur dont la structure demeure incertaine." },
+  { id: "right-technique", answer: 1, explanation: "La combinaison d'une protection et d'une contrainte répond aux deux objectifs sans exposer les alliés à une attaque inutile." }
 ];
 
 const questionSets = {
