@@ -5,8 +5,8 @@ const questions = [
   { id: "deflection", text: "Face à une attaque de Zanjutsu très puissante, quelle réponse limite le choc direct ?", options: ["Crisper davantage sa prise", "Dévier la trajectoire de la lame", "Fermer les yeux et bloquer", "Avancer en ligne droite"] },
   { id: "rhythm", text: "Pourquoi varier le rythme de ses attaques ?", options: ["Pour rendre les gestes plus spectaculaires", "Pour empêcher l'adversaire d'anticiper", "Pour allonger volontairement le combat", "Pour ne plus avoir besoin de garde"] },
   { id: "observe-body", text: "Que doit principalement observer un pratiquant de Zanjutsu ?", options: ["Uniquement la pointe de la lame", "Uniquement les yeux", "L'ensemble du corps et le mouvement adverse", "Le décor derrière lui"] },
-  { id: "feint", text: "À quoi sert une feinte ?", options: ["À imposer une blessure en RP", "À provoquer une réaction et créer une ouverture", "À interrompre définitivement le combat", "À restaurer son énergie"] },
-  { id: "narrow-space", text: "Quel avantage peut offrir un espace étroit contre une arme très longue ?", options: ["Il augmente sa portée", "Il limite ses grands mouvements", "Il rend son porteur invisible", "Il annule automatiquement son Shikai"] },
+  { id: "feint", text: "À quoi sert une feinte ?", options: ["À garantir que le prochain coup atteindra sa cible", "À provoquer une réaction et créer une ouverture", "À interrompre définitivement le combat", "À restaurer son énergie"] },
+  { id: "narrow-space", text: "Quel avantage peut offrir un espace étroit contre une arme très longue ?", options: ["Il augmente sa portée", "Il limite ses grands mouvements", "Il rend son porteur invisible", "Il neutralise automatiquement sa puissance"] },
   { id: "observer-role", text: "Quel membre d'une équipe analyse les capacités ennemies et transmet les informations ?", options: ["Le finisseur", "L'avant-garde", "L'observateur", "Le contrôleur"] },
   { id: "retreat", text: "Votre mission consiste seulement à recueillir des informations. L'ennemi est très supérieur. Que faire ?", options: ["Combattre jusqu'à l'épuisement", "Libérer immédiatement toutes ses capacités", "Transmettre les informations et battre en retraite", "Ignorer l'objectif initial"] },
   { id: "combine", text: "Quelle combinaison unit correctement Hakuda et Zanjutsu ?", options: ["Jeter sa lame avant chaque combat", "Contrôler la distance au sabre, frapper au corps à corps dans la garde puis se replacer", "Utiliser les deux sans observer l'adversaire", "Rester immobile en alternant les attaques"] },
@@ -57,7 +57,7 @@ form.addEventListener("submit", async event => {
   setStatus("");
   const submission = collectSubmission();
   if (submission.candidateName.length < 2 || submission.candidateName.length > 60) {
-    setStatus("Saisissez un nom ou pseudonyme de 2 à 60 caractères.", "error");
+    setStatus("Saisissez un nom de candidat de 2 à 60 caractères.", "error");
     document.querySelector("#candidate-name").focus();
     return;
   }

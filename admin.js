@@ -161,7 +161,7 @@ async function manageAdmin(action, userId) {
 }
 
 document.querySelector("#export-button").addEventListener("click", () => {
-  const header = ["Nom ou pseudonyme", "Date", "Bonnes réponses", "Total", "Pourcentage", "Résultat", "Réponses JSON"];
+  const header = ["Nom du candidat", "Date", "Bonnes réponses", "Total", "Pourcentage", "Résultat", "Réponses JSON"];
   const lines = filteredAttempts().map(attempt => [attempt.candidate_name, attempt.created_at, attempt.correct_count, attempt.total, attempt.percent, attempt.passed ? "Réussite" : "Échec", JSON.stringify(attempt.answers)]);
   const csv = "\uFEFF" + [header, ...lines].map(row => row.map(csvCell).join(";")).join("\r\n");
   const link = document.createElement("a");

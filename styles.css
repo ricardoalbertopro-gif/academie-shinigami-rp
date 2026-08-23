@@ -84,10 +84,10 @@ h1 em { color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,.75); font
 .principle > span { color: var(--red); font-size: 10px; font-weight: 700; }
 .principle h3, .lesson-list h3, .tactic-card h3, .team-section h3, .retreat h3 { font-family: var(--serif); font-size: 30px; margin: 10px 0; }
 .principle p, .lesson-list p, .tactic-card p { color: #696760; font-size: 14px; }
-.rp-note { margin-top: 65px; border-left: 3px solid var(--red); padding: 30px 40px; background: rgba(255,255,255,.35); display: grid; grid-template-columns: 130px 1.4fr 1fr; gap: 35px; align-items: start; }
+.field-note { margin-top: 65px; border-left: 3px solid var(--red); padding: 30px 40px; background: rgba(255,255,255,.35); display: grid; grid-template-columns: 130px 1.4fr 1fr; gap: 35px; align-items: start; }
 .note-label { color: var(--red); font-size: 10px; text-transform: uppercase; letter-spacing: .2em; font-weight: 700; }
 blockquote { margin: 0; font-family: var(--serif); font-size: 23px; line-height: 1.35; font-style: italic; }
-.rp-note > p { font-size: 13px; color: #66645f; }
+.field-note > p { font-size: 13px; color: #66645f; }
 
 .dark-section { color: #f1eee7; background: var(--ink); overflow: hidden; }
 .dark-section::before { content: "斬"; position: absolute; right: -2vw; top: 14%; font-family: var(--serif); font-size: 38vw; line-height: 1; color: rgba(255,255,255,.018); }
@@ -245,7 +245,7 @@ th { color: #777; font-size: 9px; text-transform: uppercase; letter-spacing: .16
   .intro-content { padding-top: 0; }
   .principles-grid { grid-template-columns: 1fr; }
   .principle, .principle:nth-child(4), .principle:nth-child(5) { grid-column: auto; margin-right: 0; }
-  .rp-note { grid-template-columns: 1fr; gap: 15px; }
+  .field-note { grid-template-columns: 1fr; gap: 15px; }
   .zanjutsu-layout { grid-template-columns: 1fr; }
   .blade-line { display: none; }
   .warning ul { grid-template-columns: 1fr 1fr; }
