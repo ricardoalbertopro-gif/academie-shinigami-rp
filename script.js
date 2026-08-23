@@ -10,7 +10,7 @@ const questions = [
   { id: "observer-role", text: "Quel membre d'une équipe analyse les capacités ennemies et transmet les informations ?", options: ["Le finisseur", "L'avant-garde", "L'observateur", "Le contrôleur"] },
   { id: "retreat", text: "Votre mission consiste seulement à recueillir des informations. L'ennemi est très supérieur. Que faire ?", options: ["Combattre jusqu'à l'épuisement", "Libérer immédiatement toutes ses capacités", "Transmettre les informations et battre en retraite", "Ignorer l'objectif initial"] },
   { id: "combine", text: "Quelle combinaison unit correctement Hakuda et Zanjutsu ?", options: ["Jeter sa lame avant chaque combat", "Contrôler la distance au sabre, frapper au corps à corps dans la garde puis se replacer", "Utiliser les deux sans observer l'adversaire", "Rester immobile en alternant les attaques"] },
-  { id: "rp-attempt", text: "En RP, pourquoi une attaque doit-elle être décrite comme une tentative ?", options: ["Parce que les personnages ne savent pas combattre", "Pour laisser à l'autre joueur la possibilité de réagir", "Pour rendre chaque action plus longue", "Parce que toutes les attaques doivent échouer"] }
+  { id: "movement-economy", text: "Pourquoi un combattant doit-il éviter les gestes inutiles ?", options: ["Parce qu'ils réduisent la portée de sa lame", "Parce qu'ils consomment de l'énergie et révèlent ses intentions", "Parce qu'ils empêchent toute attaque à distance", "Parce qu'ils rendent sa garde systématiquement trop basse"] }
 ];
 
 const config = window.APP_CONFIG || {};

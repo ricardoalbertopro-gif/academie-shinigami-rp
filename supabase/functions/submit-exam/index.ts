@@ -18,7 +18,7 @@ const questions = [
   { id: "observer-role", answer: 2, explanation: "L'observateur analyse le combat et partage les informations utiles au groupe." },
   { id: "retreat", answer: 2, explanation: "Rapporter les renseignements et préserver l'équipe constitue ici la victoire tactique." },
   { id: "combine", answer: 1, explanation: "Les deux disciplines se complètent lorsque la technique s'adapte à la distance." },
-  { id: "rp-attempt", answer: 1, explanation: "Le RP équitable laisse à chaque joueur le contrôle des réactions de son personnage." }
+  { id: "movement-economy", answer: 1, explanation: "Un geste inutile dépense de l'énergie sans avantage tactique et peut dévoiler l'action préparée." }
 ];
 
 function json(body: unknown, status = 200) {

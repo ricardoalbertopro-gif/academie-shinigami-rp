@@ -15,7 +15,7 @@ const questionLabels = {
   "hakuda-goal": "Objectif du Hakuda", "flexible-guard": "Garde souple", "short-range": "Distance courte",
   "deflection": "Déviation", "rhythm": "Rythme", "observe-body": "Observation du corps", "feint": "Feinte",
   "narrow-space": "Espace étroit", "observer-role": "Rôle de l'observateur", "retreat": "Retraite tactique",
-  "combine": "Hakuda et Zanjutsu", "rp-attempt": "Tentative en RP"
+  "combine": "Hakuda et Zanjutsu", "movement-economy": "Économie des mouvements"
 };
 
 function showOnly(panel) {
